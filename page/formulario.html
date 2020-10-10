@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+        http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css"/> -->
+        <link rel="stylesheet" type="text/css" href="../css/index.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../css/form.css" />
+
+        <!-- Titulo -->
+        <title>Site Clientes</title>
+    </head>
+
+    <body class="container">
+
+        <!-- loaging -->
+        <div id="fundoLoading" class="fundoLoading" style="display: none;" >
+                <div id="loader" style="display: none;" ></div>
+        </div>
+       
+
+        <!-- formulario cadastro -->
+        <div class="">
+            <h2>Formulario de cadastro :</h2>
+        </div>
+
+
+        <form id="formProdutos">
+            <div class="form-group">
+                <label>
+                    Digite o produto:
+                </label>
+                <input id="name" class="form-control" placeholder="digite o produto"/>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>
+                        Digite o preço:
+                    </label>
+                    <input id="preco" class="form-control" type="text" placeholder="digite o preço do produto"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="statusVenda">Status da Venda :
+                    </label>
+                    <select id="statusVenda" class="form-control">
+                        <option value="" selected>Selecione...</option>
+                        <option value="1">Vendido</option>
+                        <option value="2">Pendente</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Mensagem de Erro -->
+            <span id="erroCampos"></span>
+
+              <!-- Button Formulario -->
+            <div class="row">
+                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" onclick="adicionaItem()">
+                    Adicionar
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
+                </button>
+               
+                <button type="button" class="btn btn-primary btn-md" data-dismiss="modal" onclick="chamaHome()">
+                    Home
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                </button>
+                <button type="reset" class="btn btn-danger btn-md" data-dismiss="modal" onclick="limpaForm()">
+                    Limpar
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
+                </button>
+            </div>
+        </form>
+
+        
+        <!-- JS -->
+        <script src="../js/jquery-3.4.1.min.js" ></script>
+        <script src="../js/jquery.mask.js"></script>
+        <script src="../js/bootstrap.min.js" ></script>
+        <script src="../js/formulario/form.js"></script>
+        <script src="../js/formMask.js"></script>
+        <script src="../utils/utils.js"></script>
+    </body>
+</html>

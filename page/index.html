@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> -->
+        <!-- <link rel="stylesheet" href="../fonts/bootstrap-glyphicons.css" /> -->
+        <link
+        rel="stylesheet" type="text/css" href="../css/index.css"/> 
+        
+        <title>Site Clientes</title>
+    </head>
+
+  <body class="container " onload="AtualizaTabelaItens()">
+
+        <!-- loaging -->
+        <div id="fundoLoading" class="fundoLoading" style="display: none;">
+                <div id="loader" style="display: none;" ></div>
+        </div>
+
+        <!-- Painel de Dados -->
+        <div class="panel panel-default ajustePainel">
+            <div class="panel-heading"> 
+                <h1 class="alinharTitulo">
+                    Bem vindo ao nosso site
+                </h1>
+            </div>
+            <div class="panel-body">
+
+                <!-- Tabela de Itens -->
+                <h2>Tabela de Itens cadastrados : </h2>
+
+
+                <table id="tblPrincipal" class="table table-condensed">
+                    <thead>
+                        <tr class="active">
+                            <th scope="col">ID</th>
+                            <th scope="col">PRODUTO</th>
+                            <th scope="col">PREÇO</th>
+                            <th scope="col">STATUS DA VENDA</th>
+                            <th scope="col">AÇÃO</th>
+                        </tr>
+                    </thead>
+                    <tbody id="conteudoTabela"></tbody>
+                </table>
+
+                <!-- BOTOES DE ACOES -->
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" onclick="chamaFormulario()">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Cadastrar Produtos
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-warning"
+                             onclick="exportarExcel('tblPrincipal','Produtos')">
+                            <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                            Exportar 
+                        </button>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+      
+         <div id="removeItemClick"></div>
+
+        <!-- Modal Excluir -->
+        <div class="modal fade" id="modalSalvar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fecha">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title justify-center" id="myModalLabel"> 
+                            Tem certeza que deseja excluir o item selecionado ?
+                        </h4>
+                    </div>
+                    <!-- Botoes Modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="confirmaRemocao()" >
+                            Sim
+                        </button>
+                        <button type="reset" class="btn btn-default" data-dismiss="modal" onclick="limpaRemocao()" >
+                            Não
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+        <!-- JS -->
+        <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/formulario/form.js"></script>
+        <script type="text/javascript" src="../js/funcionalidadesExcel.js"></script>
+        <script type="text/javascript" src="../utils/utils.js"></script>
+ </body>
+</html>

@@ -8,9 +8,10 @@ function chamaFormulario(pagina) {
     setTimeout(()=>{
 
         if (pagina === 'index.html') {
-            window.location.href = "index.html";
+           history.go(-1);
+            // window.location.href = "Sistema_Cadastro_Produtos/index.html";
         }
-        window.location.href = "formulario.html";
+        window.location.href = "./page/formulario.html";
 
         stadoLoaging(false);
     }, 2000 );
@@ -22,7 +23,7 @@ function chamaHome() {
     stadoLoaging(true)
 
     setTimeout(()=>{
-        window.location.href = "index.html";
+        window.history.back(); //  = "index.html";
 
         stadoLoaging(false);
     } , 2000);

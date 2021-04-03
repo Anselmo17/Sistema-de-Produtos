@@ -8,8 +8,13 @@ function exportarExcel(tableID, filename = ''){
     var downloadLink;
     var dataType = 'data:application/vnd.ms-excel;charset=UTF-8;';
     var tableSelect = document.getElementById(tableID);
-    var tableHTML = tableSelect.outerHTML;
+    var formatHTML = tableSelect.outerHTML;
+    var tableHTML = formatHTML.replace('<th scope="col">AÇÃO</th>','');
+    var tableHTML = tableHTML.replace(/Editar/g,'');
+    var tableHTML = tableHTML.replace(/Excluir/g,'');
     
+
+
     // Specify file name
     filename = filename ? filename+'.xls':'excel_data.xls';
     
